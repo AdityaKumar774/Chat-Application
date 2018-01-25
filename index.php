@@ -33,5 +33,6 @@
     <div id="chatlogs">
         LOADING CHAT LOGS PLEASE WAIT...
     </div>
+</form>
 </body>
 </html>
