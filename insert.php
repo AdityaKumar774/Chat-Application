@@ -9,6 +9,6 @@ mysqli_query($con, "INSERT INTO logs ('username', 'msg') VALUES ('$uname', '$msg
 $result1 = mysqli_query($con, "SELECT * FROM logs ORDER by id DESC");
 
 while ($extract = mysqli_fetch_array($result1)){
-    echo $extract['username'] . ": " . $extract['msg']. "<br>";
+    echo "<span class='uname'>" . $extract['username'] . "</span>: <span class='msg'>".$extract ['msg'] ." </span><br />";
 }
 ?>
