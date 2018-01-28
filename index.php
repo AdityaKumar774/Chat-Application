@@ -22,12 +22,6 @@
             xmlhttp.open('GET', 'insert.php?uname='+uname+'&msg='+msg, true);
             xmlhttp.send();
         }
-        $(document).ready(function (e) {
-            $.ajaxSetup({cache:false});
-            setInterval(function () {
-                $('#chatlogs').load('logs.php');
-            }, 2000);
-        });
     </script>
 </head>
 <body>
@@ -36,7 +30,7 @@
     Your message: <br />
     <textarea name="msg"></textarea> <br />
     <a href="#" onclick="submitChat()"> Send </a><br/><br/>
-    <div class="chatlogs">
+    <div id="chatlogs">
         LOADING CHAT LOGS PLEASE WAIT...
     </div>
 </form>
