@@ -4,7 +4,7 @@
 <html>
 <head>
     <title> Chat Box </title>
-    <script>
+    <script type="text/javascript">
         function submitChat() {
             if(form1.uname.value == '' || form1.msg.value == ''){
                 alert('ALL FIELDS ARE MANDATORY');
@@ -15,8 +15,8 @@
             var xmlhttp = new XMLHttpRequest();
 
             xmlhttp.onreadystatechange = function() {
-                if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                    document.getElementById('chatlogs').innerHTML = xmlhttp.responseText;
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById('chatlogs').innerHTML = this.responseText;
                 }
             };
             xmlhttp.open('GET', 'insert.php?uname='+uname+'&msg='+msg, true);
