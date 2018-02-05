@@ -13,6 +13,7 @@ if(isset($_POST['send'])){
 <div id="messages">
     <?php
         $messages = get_msg();
+        if (is_array($messages))
         foreach ($messages as $message){
             echo '<strong>'.$message['sender'].' Sent</strong><br />';
             echo $message['message'].'<br /><br />';
