@@ -1,16 +1,15 @@
 <?php
 function get_msg()
 {
-    $conn = mysqli_connect('localhost', 'root', '');
-    $run = mysqli_query($conn, "SELECT 'Sender', 'Message' FROM 'chat'.'chat' ");
+    $query = "SELECT 'Sender', 'Message' FROM 'chat'.'chat' ";
+    $run = mysqli_query($query);
     $messages = array();
-    if ($run) {
+
         while ($message = mysqli_fetch_assoc($run)) {
             $messages[] = array('sender' => $message['Sender'],
                 'message' => $message['Message']);
         }
         return $messages;
-    }
 }
 function send_msg($sender, $message){
 
