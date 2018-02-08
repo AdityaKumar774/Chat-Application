@@ -1,7 +1,8 @@
 <?php
+
 function get_msg()
 {
-    $query = "SELECT 'Sender', 'Message' FROM 'chat'.'chat' ";
+    $query = "SELECT `Sender`, `Message` FROM `chat`.`chat`";
     $run = mysqli_query($query);
     $messages = array();
 
@@ -17,8 +18,14 @@ function send_msg($sender, $message){
         $sender = mysqli_real_escape_string($sender);
         $message = mysqli_real_escape_string($message);
 
-        $query = "INSERT INTO 'chat'.'chat' VALUES (null, '{$sender}', '$message')";
-    }else {
+        $query = "INSERT INTO `chat`.`chat` VALUES (null, '{$sender}', '$message'";
+
+        if($run = mysqli_query($query)){
+            return true;
+        } else {
+            return false;
+        }
+    } else {
         return false;
     }
 }
